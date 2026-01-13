@@ -1,37 +1,40 @@
-# Dependencies
+# MCP 설정 파일
+.mcp.json
+
+# Claude 로컬 설정
+.claude/
+
+# Node.js 관련
 node_modules/
+package-lock.json
 .pnp/
 .pnp.js
 
-# Build outputs
+# 캐시 파일
+.cache/
+.vite/
 dist/
 build/
 
-# Environment files
+# 환경 변수
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
 
-# Logs
+# OS/IDE 파일
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 로그 파일
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# OS files
-.DS_Store
-Thumbs.db
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Cache
+# 기타 캐시
 .npm-cache/
 .eslintcache
-
-# MCP config (contains tokens)
-.mcp.json
