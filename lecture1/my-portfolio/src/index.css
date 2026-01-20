@@ -1,0 +1,97 @@
+/* CSS 초기화 */
+* {
+  box-sizing: border-box;
+}
+
+/* HTML, Body 초기화 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Root 앱 컨테이너 설정 */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 컬러 팔레트 CSS 변수 */
+:root {
+  /* ===== Primary Colors ===== */
+  --color-primary: #FFD400;
+  --color-primary-light: #FFE34D;
+  --color-primary-dark: #E6A000;
+
+  /* ===== Secondary Colors ===== */
+  --color-secondary: #00A8CC;
+  --color-secondary-light: #4DC4E0;
+  --color-secondary-dark: #007A99;
+  --color-accent-green: #4CAF50;
+  --color-accent-pink: #FF6B8A;
+
+  /* ===== Section Background Colors ===== */
+  --color-section-yellow-bg: #FFF5CC;
+  --color-section-yellow-text: #E6A000;
+  --color-section-blue-bg: #E5F6FB;
+  --color-section-blue-text: #00A8CC;
+  --color-section-green-bg: #E8F7E0;
+  --color-section-green-text: #4CAF50;
+  --color-section-pink-bg: #FFE8EC;
+  --color-section-pink-text: #FF6B8A;
+
+  /* ===== Background Colors ===== */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F9F9F9;
+  --color-bg-subtle: #FAFAFA;
+
+  /* ===== Text Colors ===== */
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+  --color-text-inverse: #FFFFFF;
+
+  /* ===== Interactive Colors ===== */
+  --color-button-primary: #FFD400;
+  --color-button-primary-text: #333333;
+  --color-button-hover: #FFBF00;
+  --color-button-active: #E6A000;
+  --color-link: #00A8CC;
+  --color-link-hover: #007A99;
+
+  /* ===== Border & Divider ===== */
+  --color-border: #EEEEEE;
+  --color-border-strong: #DDDDDD;
+  --color-divider: #EEEEEE;
+
+  /* ===== Shadow ===== */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* ===== Typography ===== */
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 링크 스타일 */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
