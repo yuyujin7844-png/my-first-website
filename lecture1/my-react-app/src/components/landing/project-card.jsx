@@ -156,11 +156,13 @@ function ProjectCard({
       <CardContent sx={{ flexGrow: 1, pb: 1 }}>
         {/* 제목 */}
         <Typography
-          variant="h6"
+          variant="h5"
           component="h3"
           sx={{
             fontWeight: 600,
             mb: 1,
+            textAlign: 'center',
+            fontSize: { xs: '1.25rem', md: '1.5rem' },
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
@@ -213,39 +215,48 @@ function ProjectCard({
       </CardContent>
 
       {/* 버튼 영역 */}
-      <CardActions sx={{ px: 2, pb: 2, pt: 0, gap: 1 }}>
-        {githubUrl && (
-          <Button
-            size="small"
-            variant="outlined"
-            startIcon={<GitHubIcon />}
-            onClick={handleGitHub}
-            sx={{
-              flex: 1,
-              borderColor: 'grey.400',
-              color: 'text.primary',
-              '&:hover': {
-                borderColor: 'grey.600',
-                backgroundColor: 'grey.100',
-              },
-            }}
-          >
-            GitHub
-          </Button>
-        )}
-        {detailUrl && (
-          <Button
-            size="small"
-            variant="contained"
-            endIcon={<LaunchIcon />}
-            onClick={handleViewDetails}
-            sx={{
-              flex: 1,
-            }}
-          >
-            View Details
-          </Button>
-        )}
+      <CardActions sx={{ px: 2, pb: 2, pt: 0, mt: 'auto' }}>
+        <Box sx={{ display: 'flex', width: '100%', gap: 1 }}>
+          {githubUrl && (
+            <Button
+              size="small"
+              variant="outlined"
+              startIcon={<GitHubIcon sx={{ fontSize: '1rem' }} />}
+              onClick={handleGitHub}
+              sx={{
+                flex: 1,
+                borderRadius: '8px',
+                borderColor: '#FFE082',
+                color: 'text.primary',
+                fontSize: '0.75rem',
+                py: 0.75,
+                '&:hover': {
+                  borderColor: '#FFD54F',
+                  backgroundColor: 'rgba(255, 224, 130, 0.1)',
+                },
+              }}
+            >
+              GitHub
+            </Button>
+          )}
+          {detailUrl && (
+            <Button
+              size="small"
+              variant="contained"
+              endIcon={<LaunchIcon sx={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.7)' }} />}
+              onClick={handleViewDetails}
+              sx={{
+                flex: 2,
+                borderRadius: '8px',
+                fontSize: '0.75rem',
+                py: 0.75,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              View Details
+            </Button>
+          )}
+        </Box>
       </CardActions>
     </Card>
   );
