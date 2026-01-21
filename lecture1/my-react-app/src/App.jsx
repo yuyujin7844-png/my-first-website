@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import ContactSection from './components/landing/contact-section.jsx';
+import ProjectsSection from './components/landing/projects-section.jsx';
 import ButtonSection from './components/ui/button-section.jsx';
 import InputSection from './components/ui/input-section.jsx';
 import Navigation from './components/common/navigation.jsx';
@@ -66,10 +67,14 @@ function App() {
         backgroundColor: 'background.default',
       }}
     >
-      <Navigation title="My App" />
-      <ButtonSection />
-      <InputSection />
+      <Navigation title="My Portfolio" />
+      <Box id="home">
+        <ButtonSection />
+        <InputSection />
+      </Box>
+      <ProjectsSection id="projects" />
       <ContactSection
+        id="contact"
         guestbookEntries={guestbookEntries}
         onGuestbookSubmit={handleGuestbookSubmit}
         isLoading={isLoading}

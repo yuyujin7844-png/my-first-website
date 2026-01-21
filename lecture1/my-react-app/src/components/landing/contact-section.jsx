@@ -3,12 +3,14 @@
  * Home 페이지의 Contact 섹션
  *
  * Props:
+ * @param {string} id - 섹션 ID (스크롤 네비게이션용) [Optional, 기본값: 'contact']
  * @param {Array} guestbookEntries - 방명록 항목 배열 [Optional]
  * @param {function} onGuestbookSubmit - 방명록 제출 핸들러 [Optional]
  * @param {boolean} isLoading - 로딩 상태 [Optional, 기본값: false]
  *
  * Example usage:
  * <ContactSection
+ *   id="contact"
  *   guestbookEntries={entries}
  *   onGuestbookSubmit={handleSubmit}
  *   isLoading={false}
@@ -24,6 +26,7 @@ import GuestbookForm from './guestbook-form.jsx';
 import GuestbookList from './guestbook-list.jsx';
 
 function ContactSection({
+  id = 'contact',
   guestbookEntries = [],
   onGuestbookSubmit = () => {},
   isLoading = false
@@ -31,7 +34,7 @@ function ContactSection({
   return (
     <Box
       component="section"
-      id="contact"
+      id={id}
       sx={{
         py: { xs: 6, md: 10 },
         backgroundColor: 'background.default',

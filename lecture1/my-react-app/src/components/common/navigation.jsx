@@ -30,14 +30,16 @@ function Navigation({ title = 'My App' }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const menuItems = [
-    { name: '홈', key: 'home' },
-    { name: '소개', key: 'about' },
-    { name: '서비스', key: 'service' },
-    { name: '연락처', key: 'contact' },
+    { name: '홈', key: 'home', sectionId: 'home' },
+    { name: '프로젝트', key: 'projects', sectionId: 'projects' },
+    { name: '연락처', key: 'contact', sectionId: 'contact' },
   ];
 
-  const handleMenuClick = (menuName) => {
-    alert(`${menuName} 메뉴가 클릭되었습니다!`);
+  const handleMenuClick = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setDrawerOpen(false);
   };
 
@@ -58,7 +60,7 @@ function Navigation({ title = 'My App' }) {
         <List>
           {menuItems.map((item) => (
             <ListItem key={item.key} disablePadding>
-              <ListItemButton onClick={() => handleMenuClick(item.name)}>
+              <ListItemButton onClick={() => handleMenuClick(item.sectionId)}>
                 <ListItemText primary={item.name} />
               </ListItemButton>
             </ListItem>
@@ -74,7 +76,7 @@ function Navigation({ title = 'My App' }) {
         <Button
           key={item.key}
           color="inherit"
-          onClick={() => handleMenuClick(item.name)}
+          onClick={() => handleMenuClick(item.sectionId)}
           sx={{
             fontSize: '1rem',
             px: 2,
