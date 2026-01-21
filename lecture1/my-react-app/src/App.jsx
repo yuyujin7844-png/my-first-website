@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import ContactSection from './components/landing/contact-section.jsx';
+import ButtonSection from './components/ui/button-section.jsx';
+import InputSection from './components/ui/input-section.jsx';
+import Navigation from './components/common/navigation.jsx';
 import { supabase } from './utils/supabase.js';
 
 function App() {
@@ -63,6 +66,9 @@ function App() {
         backgroundColor: 'background.default',
       }}
     >
+      <Navigation title="My App" />
+      <ButtonSection />
+      <InputSection />
       <ContactSection
         guestbookEntries={guestbookEntries}
         onGuestbookSubmit={handleGuestbookSubmit}

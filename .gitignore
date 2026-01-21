@@ -38,3 +38,6 @@ yarn-error.log*
 # 기타 캐시
 .npm-cache/
 .eslintcache
+
+# Local Netlify folder
+.netlify
