@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -30,9 +31,9 @@ function Navigation({ title = 'My App' }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const menuItems = [
-    { name: '홈', key: 'home', sectionId: 'home' },
-    { name: '프로젝트', key: 'projects', sectionId: 'projects' },
-    { name: '연락처', key: 'contact', sectionId: 'contact' },
+    { name: 'Home', key: 'home', sectionId: 'home' },
+    { name: 'Projects', key: 'projects', sectionId: 'projects' },
+    { name: 'Contact', key: 'contact', sectionId: 'contact' },
   ];
 
   const handleMenuClick = (sectionId) => {
@@ -91,16 +92,19 @@ function Navigation({ title = 'My App' }) {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{
-            flexGrow: 1,
-            fontWeight: 'bold',
-          }}
-        >
-          {title}
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+          <WorkspacePremiumIcon sx={{ mr: 1, fontSize: '1.8rem' }} />
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{
+              fontWeight: 'bold',
+              fontSize: { xs: '1.3rem', md: '1.5rem' },
+            }}
+          >
+            {title}
+          </Typography>
+        </Box>
 
         {isMobile ? (
           <>
