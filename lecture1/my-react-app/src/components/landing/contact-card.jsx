@@ -28,8 +28,8 @@ function ContactCard({ email, phone, location }) {
     <Card
       sx={{
         borderRadius: 3,
-        boxShadow: '0 4px 20px rgba(255, 155, 80, 0.15)',
-        background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+        backgroundColor: 'rgba(255, 245, 204, 0.5)',
       }}
     >
       <CardContent sx={{ p: { xs: 2, md: 3 } }}>
@@ -37,7 +37,7 @@ function ContactCard({ email, phone, location }) {
           variant="h3"
           sx={{
             mb: 3,
-            color: 'primary.main',
+            color: '#ffe34d',
             fontSize: { xs: '1.25rem', md: '1.5rem' },
             fontWeight: 600,
           }}
@@ -62,8 +62,8 @@ function ContactCard({ email, phone, location }) {
                   width: 40,
                   height: 40,
                   borderRadius: '50%',
-                  backgroundColor: 'primary.light',
-                  color: 'white',
+                  backgroundColor: '#fff5cc',
+                  color: '#E6A000',
                 }}
               >
                 {item.icon}

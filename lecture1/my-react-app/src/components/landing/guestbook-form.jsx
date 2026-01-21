@@ -76,8 +76,8 @@ function GuestbookForm({ onSubmit, isLoading = false }) {
     <Card
       sx={{
         borderRadius: 3,
-        boxShadow: '0 4px 20px rgba(255, 155, 80, 0.15)',
-        background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+        backgroundColor: 'rgba(255, 245, 204, 0.5)',
       }}
     >
       <CardContent sx={{ p: { xs: 2, md: 3 } }}>
@@ -85,7 +85,7 @@ function GuestbookForm({ onSubmit, isLoading = false }) {
           variant="h3"
           sx={{
             mb: 3,
-            color: 'primary.main',
+            color: '#ffe34d',
             fontSize: { xs: '1.25rem', md: '1.5rem' },
             fontWeight: 600,
           }}
@@ -202,9 +202,10 @@ function GuestbookForm({ onSubmit, isLoading = false }) {
               textTransform: 'none',
               fontSize: '1rem',
               fontWeight: 600,
-              background: 'linear-gradient(135deg, #FF9B50 0%, #FFD93D 100%)',
+              backgroundColor: '#fff5cc',
+              color: '#E6A000',
               '&:hover': {
-                background: 'linear-gradient(135deg, #E07B30 0%, #F5C400 100%)',
+                backgroundColor: '#ffe999',
               },
             }}
           >

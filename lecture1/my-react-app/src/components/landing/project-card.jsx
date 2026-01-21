@@ -226,13 +226,13 @@ function ProjectCard({
               sx={{
                 flex: 1,
                 borderRadius: '8px',
-                borderColor: '#FFE082',
+                borderColor: '#ffe8ec',
                 color: 'text.primary',
                 fontSize: '0.75rem',
                 py: 0.75,
                 '&:hover': {
-                  borderColor: '#FFD54F',
-                  backgroundColor: 'rgba(255, 224, 130, 0.1)',
+                  borderColor: '#ffcdd6',
+                  backgroundColor: 'rgba(255, 232, 236, 0.2)',
                 },
               }}
             >
@@ -243,14 +243,21 @@ function ProjectCard({
             <Button
               size="small"
               variant="contained"
-              endIcon={<LaunchIcon sx={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.7)' }} />}
+              endIcon={<LaunchIcon sx={{ fontSize: '1rem', color: '#FF6B8A' }} />}
               onClick={handleViewDetails}
               sx={{
                 flex: 2,
                 borderRadius: '8px',
+                backgroundColor: '#ffe8ec',
+                color: 'text.primary',
                 fontSize: '0.75rem',
                 py: 0.75,
                 whiteSpace: 'nowrap',
+                boxShadow: 'none',
+                '&:hover': {
+                  backgroundColor: '#ffcdd6',
+                  boxShadow: 'none',
+                },
               }}
             >
               View Details

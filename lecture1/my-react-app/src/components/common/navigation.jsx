@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -29,17 +29,34 @@ function Navigation({ title = 'My App' }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
-    { name: 'Home', key: 'home', sectionId: 'home' },
-    { name: 'Projects', key: 'projects', sectionId: 'projects' },
-    { name: 'Contact', key: 'contact', sectionId: 'contact' },
+    { name: 'Home', key: 'home', path: '/', sectionId: null },
+    { name: 'About Me', key: 'about', path: '/about', sectionId: null },
+    { name: 'Projects', key: 'projects', path: '/', sectionId: 'projects' },
   ];
 
-  const handleMenuClick = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleMenuClick = (item) => {
+    if (item.sectionId) {
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(item.sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(item.sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      navigate(item.path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setDrawerOpen(false);
   };
@@ -61,7 +78,7 @@ function Navigation({ title = 'My App' }) {
         <List>
           {menuItems.map((item) => (
             <ListItem key={item.key} disablePadding>
-              <ListItemButton onClick={() => handleMenuClick(item.sectionId)}>
+              <ListItemButton onClick={() => handleMenuClick(item)}>
                 <ListItemText primary={item.name} />
               </ListItemButton>
             </ListItem>
@@ -77,7 +94,7 @@ function Navigation({ title = 'My App' }) {
         <Button
           key={item.key}
           color="inherit"
-          onClick={() => handleMenuClick(item.sectionId)}
+          onClick={() => handleMenuClick(item)}
           sx={{
             fontSize: '1rem',
             px: 2,
@@ -90,10 +107,15 @@ function Navigation({ title = 'My App' }) {
   );
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: '#fff5cc',
+        borderRadius: 0,
+      }}
+    >
       <Toolbar>
         <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-          <WorkspacePremiumIcon sx={{ mr: 1, fontSize: '1.8rem' }} />
           <Typography
             variant="h5"
             component="div"
